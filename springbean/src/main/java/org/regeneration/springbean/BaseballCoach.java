@@ -1,4 +1,11 @@
 package org.regeneration.springbean;
 
-public class BaseballCoach {
+import org.springframework.stereotype.Component;
+
+@Component
+public class BaseballCoach implements Coach {
+    @Override
+    public String performDailyWorkout() {
+        return "Baseball practice";
+    }
 }
