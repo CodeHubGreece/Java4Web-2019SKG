@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="JavaScript example">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JavaScript example</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script>
+        // 5
+
+        let greeting = "say Hi";
+        let times = 4;
+
+        if (times > 3) {
+            let hello = "say Hello instead";
+            console.log(hello);//"say Hello instead"
+        }
+        console.log(hello) // hello is not defined
+
+        // 6
+        let greeting = "say Hi";
+        greeting = "say Hello instead";
+
+        // 7
+        let greeting = "say Hi";
+        let greeting = "say Hello instead";//error: Identifier 'greeting' has already been declared
+
+        // 8..
+        
+        let greeting = "say Hi";
+        if (true) {
+            let greeting = "say Hello instead";
+            console.log(greeting);//"say Hello instead"
+        }
+        console.log(greeting);//"say Hi"
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

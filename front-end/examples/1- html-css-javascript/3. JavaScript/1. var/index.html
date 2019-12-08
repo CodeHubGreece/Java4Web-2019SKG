@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="JavaScript example">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JavaScript example</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script>
+        // 1
+        var greeter = "hey hi";
+
+        function newFunction() {
+            var hello = "hello";
+        }
+        // 2
+        var tester = "hey hi";
+
+        function newFunction() {
+            var hello = "hello";
+        }
+        console.log(hello); // error: hello is not defined
+
+        // 3
+
+        var greeter = "hey hi";
+        var greeter = "say Hello instead";
+        var greeter = "hey hi";
+        greeter = "say Hello instead";
+
+        // 4
+        var greeter = "hey hi";
+        var times = 4;
+
+        if (times > 3) {
+        var greeter = "say Hello instead"; 
+        }
+
+        console.log(greeter) //"say Hello instead"
+
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
