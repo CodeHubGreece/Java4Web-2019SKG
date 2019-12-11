@@ -5,12 +5,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
-            $("#p1").mouseenter(function () {
-                alert("You entered p1!");
-            });
-
-            $("#p1").mouseleave(function () {
-                alert("Bye! You now leave p1!");
+            $("button").click(function () {
+                $("#div1").load("./test.txt");
             });
         });
     </script>
@@ -18,7 +14,11 @@
 
 <body>
 
-    <p id="p1">Enter this paragraph.</p>
+    <div id="div1">
+        <h2>Let jQuery AJAX Change This Text</h2>
+    </div>
+
+    <button>Get External Content</button>
 
 </body>
 

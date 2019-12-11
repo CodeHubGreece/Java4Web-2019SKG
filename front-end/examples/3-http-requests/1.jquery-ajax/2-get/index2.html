@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("button").click(function (data) {
+                $.get("https://jsonplaceholder.typicode.com/posts", function (data) {
+                    console.log(data);
+                    alert(JSON.stringify(data));
+                });
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    
+    <button>Get External Content</button>
+
+</body>
+
+</html>
