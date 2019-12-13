@@ -10,25 +10,40 @@
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="../../styles/main.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <!-- JavaScript files -->
   <script src="../../scripts/config/main.js"></script>
   <script src="../../scripts/security/home-auth.js"></script>
   <script src="../../scripts/user/home.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <main>
+  <maintitle>
     <!-- Page name -->
     <header class="center">
-      <h2>Home page</h2>
+      <h2>Books page</h2>
+      <input type="button" value="Get Books" onclick="get_books()">
     </header>
 
-    <!-- Logout button -->
     <section class="center">
+      <table id="books-table" class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <!-- Logout button -->
       <input type="button" value="Logout" onclick="logout()">
     </section>
-  </main>
+  </maintitle>
 
 </body>
 
