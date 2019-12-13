@@ -32,6 +32,7 @@ public class BookController {
     }
 
     @PostMapping("/books")
+    @ResponseStatus(HttpStatus.CREATED)
     public Book newBook(@RequestBody @Valid Book book) {
         return bookService.newBook(book);
     }

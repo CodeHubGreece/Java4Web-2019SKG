@@ -89,7 +89,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureHandler(new SimpleUrlAuthenticationFailureHandler())
                 .and()
                 .logout()
-                .logoutSuccessUrl("/login.html");
+                .logoutSuccessUrl("/login.html")
+                .and()
+                .httpBasic(); // enable for testing
 
         // enable H2 console
         http.headers().frameOptions().disable();
