@@ -79,7 +79,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(authenticationEntryPoint)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/books").authenticated()
                 .antMatchers("/books/**").authenticated()
                 .antMatchers(HttpMethod.PUT, "/user").hasRole("ADMIN")
                 .antMatchers("/user").authenticated()
