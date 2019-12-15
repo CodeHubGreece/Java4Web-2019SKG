@@ -4,17 +4,18 @@ package org.regeneration.rest.restless.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@NamedQuery(name="User.findUserByUsername",
+        query = "SELECT u FROM User u " +
+                "WHERE LOWER(u.username) = LOWER(?1) AND u.role != 'ADMIN'")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(unique = true)
     private String username;
     private String password;
     private String name;
@@ -42,6 +43,10 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    private @PrePersist @PreUpdate void prepareUsername(){
+        this.username = username == null ? null : username.toLowerCase();
     }
 
     @JsonIgnore
