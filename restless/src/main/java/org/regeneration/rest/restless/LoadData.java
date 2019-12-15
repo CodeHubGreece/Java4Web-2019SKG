@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,10 +27,10 @@ public class LoadData {
             userRepository.save(admin);
 
             List<Book> books = Arrays.asList(
-                    new Book("The Grapes of Wrath", "0143125508"),
-                    new Book("Symposium", "0872200760"),
-                    new Book("Pride and Prejudice", "0486284735"),
-                    new Book("The Great Gatsby", "9780141182636")
+                    new Book("The Grapes of Wrath", "0143125508", LocalDate.parse("1939-04-14")),
+                    new Book("Symposium", "0872200760", LocalDate.parse("1989-05-01")),
+                    new Book("Pride and Prejudice", "0486284735", LocalDate.parse("1995-04-01")),
+                    new Book("The Great Gatsby", "9780141182636", LocalDate.parse("2000-02-01"))
             );
             bookRepository.saveAll(books);
         };

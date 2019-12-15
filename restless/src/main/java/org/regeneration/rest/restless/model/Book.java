@@ -1,12 +1,10 @@
 package org.regeneration.rest.restless.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 @Entity
 public class Book {
@@ -22,10 +20,13 @@ public class Book {
     @NotEmpty
     private String title;
 
+    private LocalDate published;
+
     public Book() {}
-    public Book(String title, String isbn) {
+    public Book(String title, String isbn, LocalDate published) {
         this.title = title;
         this.isbn = isbn;
+        this.published = published;
     }
 
     public Long getId() {
@@ -52,4 +53,11 @@ public class Book {
         this.title = title;
     }
 
+    public LocalDate getPublished() {
+        return published;
+    }
+
+    public void setPublished(LocalDate published) {
+        this.published = published;
+    }
 }

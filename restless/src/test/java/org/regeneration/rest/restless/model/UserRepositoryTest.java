@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class UserRepositoryTest {
 
     @Autowired
-    UserRepository repository;
+    private UserRepository repository;
 
     @Test
     public void testNamedQueryFindUserByUsername() {
