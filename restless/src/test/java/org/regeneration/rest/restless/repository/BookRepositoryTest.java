@@ -40,4 +40,24 @@ public class BookRepositoryTest {
         assertEquals("The Great Gatsby", matchedBooks.get(0).getTitle());
     }
 
+    @Test
+    public void bookQueryWithPublishedDataAndTitle() {
+        List<Book> foundBooks = bookRepository.findBooksWithSubjectAndPublishedDate(
+                LocalDate.parse("1995-01-01"),
+                LocalDate.now(),
+                "ga");
+
+        assertEquals(1, foundBooks.size());
+    }
+
+    @Test
+    public void bookQueryWithPublishedDataOnly() {
+        List<Book> foundBooks = bookRepository.findBooksWithSubjectAndPublishedDate(
+                LocalDate.parse("1995-01-01"),
+                LocalDate.now(),
+                null);
+
+        assertEquals(2, foundBooks.size());
+    }
+
 }
