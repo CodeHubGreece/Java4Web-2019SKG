@@ -1,15 +1,31 @@
 package org.regeneration.rest.restless.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotNull
+    @Size(min=10, max=13)
     private String isbn;
+
+    @NotEmpty
     private String title;
 
-    public Book(Long id, String isbn, String title) {
-        this.id = id;
-        this.isbn = isbn;
+    public Book() {}
+    public Book(String title, String isbn) {
         this.title = title;
+        this.isbn = isbn;
     }
 
     public Long getId() {

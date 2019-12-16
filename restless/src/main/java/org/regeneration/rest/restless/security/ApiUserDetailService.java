@@ -27,7 +27,7 @@ public class ApiUserDetailService implements UserDetailsService {
         }
 
 
-        ApiUserDetails userDetails = new ApiUserDetails(user.getUsername(), user.getPassword());
+        ApiUserDetails userDetails = new ApiUserDetails(user.getUsername(), user.getPassword(), user.getRole());
         return userDetails;
     }
 }
